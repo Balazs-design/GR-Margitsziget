@@ -308,3 +308,24 @@ h1 em, h2 em { font-style: normal; color: var(--gold-2); }
   .extras b, .extras .p { font-size: 16px; }
   .ccard b { font-size: 18px; }
 }
+
+/* ---- v4: fewer template marks ---- */
+.hero__line { margin-top: 28px; font-size: 14px; color: var(--muted); }
+.hero h1 { font-size: clamp(40px, 5vw, 72px); max-width: 15ch; }
+.cta { background: var(--bg-2); padding: clamp(72px, 9vw, 120px) 0; }
+.cta::before { display: none; }
+.cta .wrap { display: grid; justify-items: start; text-align: left; gap: 16px; }
+.cta h2 { max-width: none; font-size: clamp(28px, 3vw, 40px); }
+.cta__tel { font: 600 clamp(44px, 7vw, 96px)/1 var(--f-head); letter-spacing: -0.04em; color: var(--gold-2); text-decoration: none; margin: 8px 0; }
+.cta__tel:hover { color: var(--ink); }
+.cta__alt { font-size: 15px; color: var(--muted); }
+.cta__alt a { color: var(--ink); }
+.gallery { grid-template-columns: 2fr 1.2fr 1fr; grid-template-rows: 300px 300px; gap: 10px; }
+.gallery .photo { aspect-ratio: auto; }
+.gallery .photo:nth-child(1) { grid-row: span 2; }
+.gallery .photo:nth-child(2) { grid-row: span 2; }
+@media (max-width: 1023px) {
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 340px 200px 200px; }
+  .gallery .photo:nth-child(1) { grid-column: span 2; grid-row: auto; }
+  .gallery .photo:nth-child(2) { grid-row: span 2; }
+}
